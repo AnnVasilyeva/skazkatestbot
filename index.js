@@ -11,12 +11,12 @@ bot.start(async (ctx) => {
     Markup.inlineKeyboard(
       [
         [
-        Markup.button.callback('\xF0\x9F\x92\x8E Маркетинговые материалы', 'btn_1'), 
-        Markup.button.callback('\xF0\x9F\x93\x84 Шаблоны документов', 'btn_2')
+        Markup.button.callback('💎  Маркетинговые материалы', 'btn_1'), 
+        Markup.button.callback('📄  Шаблоны документов', 'btn_2')
         ],
         [
-        Markup.button.callback('\xF0\x9F\x93\x8D Наши ресурсы', 'btn_3'),
-        Markup.button.callback('\xE2\xAD\x90 Дайджест', 'btn_4')
+        Markup.button.callback('📍 Наши ресурсы', 'btn_3'),
+        Markup.button.callback('🔥  Дайджест', 'btn_4')
         ]
       ]
     ))
@@ -46,10 +46,10 @@ function addActionBot(name, src, text) {
   })
 }
 
-addActionBot('btn_1', './img/html.jpg', text.text1)
-addActionBot('btn_2', './img/css.jpg', text.text2)
-addActionBot('btn_3', false, text.text3)
-addActionBot('btn_4', './img/react.jpg', text.text4)
+addActionBot('btn_1', './img/marketing.jpg', text.text1)
+addActionBot('btn_2', './img/documents.jpg', text.text2)
+addActionBot('btn_3', './img/resourse.jpg', text.text3)
+addActionBot('btn_4', './img/digest.jpg', text.text4)
 
 
 bot.launch()
