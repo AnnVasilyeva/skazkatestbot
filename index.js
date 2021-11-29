@@ -49,7 +49,7 @@ function addActionBot(name, src, text) {
 addActionBot('btn_1', './img/marketing.jpg', text.text1)
 addActionBot('btn_2', './img/documents.jpg', text.text2)
 addActionBot('btn_3', './img/resourse.jpg', text.text3)
-addActionBot('btn_4', './img/digest.jpg', text.text4)
+addActionBot('btn_4', './img/digest.jpeg', text.text4)
 
 
 bot.launch()
