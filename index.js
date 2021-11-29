@@ -3,24 +3,29 @@ require('dotenv').config()
 const text = require('./const');
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
-bot.start((ctx) => {
-  ctx.reply(`Hi, ${ctx.message.from.first_name ? ctx.message.from.first_name : 'stranger'}!`)
+bot.start(async (ctx) => {
+  const {first_name, last_name} = ctx.message.from;
   try {
-    ctx.replyWithHTML('<b>Show info about:</b>', Markup.inlineKeyboard(
+    // await ctx.reply()
+    await ctx.reply(`Привет, ${first_name ? first_name : 'незнакомец'} ${last_name ? last_name : ''} !`, 
+    Markup.inlineKeyboard(
       [
-        [Markup.button.callback('\xF0\x9F\x92\x8E Маркетинговые материалы', 'btn_1'), Markup.button.callback('\xF0\x9F\x93\x84	 Шаблоны документов', 'btn_2')],
-        [Markup.button.callback('Наши ресурсы', 'btn_3'), Markup.button.callback('Дайджест', 'btn_4')]
+        [
+        Markup.button.callback('\xF0\x9F\x92\x8E Маркетинговые материалы', 'btn_1'), 
+        Markup.button.callback('\xF0\x9F\x93\x84 Шаблоны документов', 'btn_2')
+        ],
+        [
+        Markup.button.callback('\xF0\x9F\x93\x8D Наши ресурсы', 'btn_3'),
+        Markup.button.callback('\xE2\xAD\x90 Дайджест', 'btn_4')
+        ]
       ]
     ))
   } catch(e) {
     console.error(e)
   }  
 })
-bot.help((ctx) => ctx.reply(text.commands))
 
-// bot.command('course', async (ctx)=> {
-  
-// })
+bot.help((ctx) => ctx.reply(text.commands))
 
 function addActionBot(name, src, text) {
   bot.action(name, async (ctx) => {
