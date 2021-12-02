@@ -14,8 +14,12 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 const text4 = `
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 `
+const text5 = `
+Сейчас я загадаю цифру от 0 до 9, а ты должен ее угадать.
+`
 module.exports.commands = commands
 module.exports.text1 = text1
 module.exports.text2 = text2
 module.exports.text3 = text3
 module.exports.text4 = text4
+module.exports.text5 = text5
